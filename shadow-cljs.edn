@@ -1,0 +1,11 @@
+{:source-paths ["src"]
+ :dependencies []
+ :builds
+ {:app {:target :browser
+        :output-dir "public/out/"
+        :asset-path "/out"
+        :modules {:main {:entries [foo.core]
+                         :init-fn foo.core/init}}
+        :devtools {:http-port  4000
+                   :http-root  "public"
+                   :after-load foo.core/init}}}}
